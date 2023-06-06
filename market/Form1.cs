@@ -30,11 +30,35 @@ namespace market
 
         private void label1_Click(object sender, EventArgs e)
         {
-            Width = 100;
-            Height = 100;
+           
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cadastro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FuncionarioMes_Click(object sender, EventArgs e)
         {
 
         }
