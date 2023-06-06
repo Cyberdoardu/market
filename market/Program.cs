@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static market.funcionalidades;
 
 namespace market
 {
@@ -14,10 +15,11 @@ namespace market
         [STAThread]
         static void Main()
         {
+            Inicializador.Iniciar();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            System.Console.WriteLine("Print example");
+
         }
     }
 }
