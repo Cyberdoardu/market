@@ -13,9 +13,14 @@ namespace market
 {
     public partial class Form1 : Form
     {
+        public funcionalidades Funcionalidades { get; set; }
+
         public Form1()
         {
             InitializeComponent();
+            Funcionalidades = new funcionalidades(this);
+            funcionalidades.Inicializador inicializador = new funcionalidades.Inicializador(this);
+            inicializador.LerArquivo();
         }
 
         private void Form1_Load(object sender, EventArgs e)

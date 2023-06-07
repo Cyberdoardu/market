@@ -1,6 +1,8 @@
-﻿namespace market
+﻿using System.Windows.Forms;
+
+namespace market
 {
-    partial class Form1
+    public partial class Form1 : Form
     {
         /// <summary>
         /// Required designer variable.
@@ -20,6 +22,8 @@
             base.Dispose(disposing);
         }
 
+
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -28,15 +32,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.Cadastro = new System.Windows.Forms.Button();
@@ -51,17 +55,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.FuncionarioMes = new System.Windows.Forms.Label();
+            this.funcionarioRank1 = new System.Windows.Forms.Label();
+            this.funcionarioRank10 = new System.Windows.Forms.Label();
+            this.funcionarioRank9 = new System.Windows.Forms.Label();
+            this.funcionarioRank8 = new System.Windows.Forms.Label();
+            this.funcionarioRank7 = new System.Windows.Forms.Label();
+            this.funcionarioRank6 = new System.Windows.Forms.Label();
+            this.funcionarioRank5 = new System.Windows.Forms.Label();
+            this.funcionarioRank3 = new System.Windows.Forms.Label();
+            this.funcionarioRank4 = new System.Windows.Forms.Label();
+            this.funcionarioRank2 = new System.Windows.Forms.Label();
             this.EstoqueProdutos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
@@ -193,17 +197,17 @@
             // 
             this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(306, 84);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart1.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(455, 193);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
@@ -242,20 +246,20 @@
             // chart2
             // 
             this.chart2.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea5.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea5);
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
             this.chart2.Cursor = System.Windows.Forms.Cursors.Cross;
-            legend5.Name = "Legend1";
-            this.chart2.Legends.Add(legend5);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
             this.chart2.Location = new System.Drawing.Point(793, 328);
             this.chart2.Name = "chart2";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series5.Legend = "Legend1";
-            series5.LegendText = "Vendas";
-            series5.MarkerBorderColor = System.Drawing.Color.White;
-            series5.Name = "Series1";
-            this.chart2.Series.Add(series5);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.LegendText = "Vendas";
+            series2.MarkerBorderColor = System.Drawing.Color.White;
+            series2.Name = "Series1";
+            this.chart2.Series.Add(series2);
             this.chart2.Size = new System.Drawing.Size(429, 204);
             this.chart2.TabIndex = 9;
             this.chart2.Text = "chart2";
@@ -265,121 +269,21 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel3.Controls.Add(this.FuncionarioMes);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.funcionarioRank1);
+            this.panel3.Controls.Add(this.funcionarioRank10);
+            this.panel3.Controls.Add(this.funcionarioRank9);
+            this.panel3.Controls.Add(this.funcionarioRank8);
+            this.panel3.Controls.Add(this.funcionarioRank7);
+            this.panel3.Controls.Add(this.funcionarioRank6);
+            this.panel3.Controls.Add(this.funcionarioRank5);
+            this.panel3.Controls.Add(this.funcionarioRank3);
+            this.panel3.Controls.Add(this.funcionarioRank4);
+            this.panel3.Controls.Add(this.funcionarioRank2);
             this.panel3.Location = new System.Drawing.Point(306, 328);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(455, 450);
             this.panel3.TabIndex = 10;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_1);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 20);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "label4";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 171);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 20);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "label5";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 134);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "label6";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(11, 205);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 20);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "label7";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(11, 239);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 20);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "label8";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(11, 273);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 20);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "label9";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(11, 310);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 20);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "label10";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(11, 349);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 20);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "label11";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(11, 384);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 20);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "label12";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(11, 65);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(62, 20);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "label13";
             // 
             // FuncionarioMes
             // 
@@ -392,28 +296,128 @@
             this.FuncionarioMes.Text = "Funcionario do Mes";
             this.FuncionarioMes.Click += new System.EventHandler(this.FuncionarioMes_Click);
             // 
+            // funcionarioRank1
+            // 
+            this.funcionarioRank1.AutoSize = true;
+            this.funcionarioRank1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.funcionarioRank1.Location = new System.Drawing.Point(11, 65);
+            this.funcionarioRank1.Name = "funcionarioRank1";
+            this.funcionarioRank1.Size = new System.Drawing.Size(62, 20);
+            this.funcionarioRank1.TabIndex = 20;
+            this.funcionarioRank1.Text = "label13";
+            // 
+            // funcionarioRank10
+            // 
+            this.funcionarioRank10.AutoSize = true;
+            this.funcionarioRank10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.funcionarioRank10.Location = new System.Drawing.Point(11, 384);
+            this.funcionarioRank10.Name = "funcionarioRank10";
+            this.funcionarioRank10.Size = new System.Drawing.Size(62, 20);
+            this.funcionarioRank10.TabIndex = 19;
+            this.funcionarioRank10.Text = "label12";
+            // 
+            // funcionarioRank9
+            // 
+            this.funcionarioRank9.AutoSize = true;
+            this.funcionarioRank9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.funcionarioRank9.Location = new System.Drawing.Point(11, 349);
+            this.funcionarioRank9.Name = "funcionarioRank9";
+            this.funcionarioRank9.Size = new System.Drawing.Size(62, 20);
+            this.funcionarioRank9.TabIndex = 18;
+            this.funcionarioRank9.Text = "label11";
+            // 
+            // funcionarioRank8
+            // 
+            this.funcionarioRank8.AutoSize = true;
+            this.funcionarioRank8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.funcionarioRank8.Location = new System.Drawing.Point(11, 310);
+            this.funcionarioRank8.Name = "funcionarioRank8";
+            this.funcionarioRank8.Size = new System.Drawing.Size(62, 20);
+            this.funcionarioRank8.TabIndex = 17;
+            this.funcionarioRank8.Text = "label10";
+            // 
+            // funcionarioRank7
+            // 
+            this.funcionarioRank7.AutoSize = true;
+            this.funcionarioRank7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.funcionarioRank7.Location = new System.Drawing.Point(11, 273);
+            this.funcionarioRank7.Name = "funcionarioRank7";
+            this.funcionarioRank7.Size = new System.Drawing.Size(53, 20);
+            this.funcionarioRank7.TabIndex = 16;
+            this.funcionarioRank7.Text = "label9";
+            // 
+            // funcionarioRank6
+            // 
+            this.funcionarioRank6.AutoSize = true;
+            this.funcionarioRank6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.funcionarioRank6.Location = new System.Drawing.Point(11, 239);
+            this.funcionarioRank6.Name = "funcionarioRank6";
+            this.funcionarioRank6.Size = new System.Drawing.Size(53, 20);
+            this.funcionarioRank6.TabIndex = 15;
+            this.funcionarioRank6.Text = "label8";
+            // 
+            // funcionarioRank5
+            // 
+            this.funcionarioRank5.AutoSize = true;
+            this.funcionarioRank5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.funcionarioRank5.Location = new System.Drawing.Point(11, 205);
+            this.funcionarioRank5.Name = "funcionarioRank5";
+            this.funcionarioRank5.Size = new System.Drawing.Size(53, 20);
+            this.funcionarioRank5.TabIndex = 14;
+            this.funcionarioRank5.Text = "label7";
+            // 
+            // funcionarioRank3
+            // 
+            this.funcionarioRank3.AutoSize = true;
+            this.funcionarioRank3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.funcionarioRank3.Location = new System.Drawing.Point(11, 134);
+            this.funcionarioRank3.Name = "funcionarioRank3";
+            this.funcionarioRank3.Size = new System.Drawing.Size(53, 20);
+            this.funcionarioRank3.TabIndex = 13;
+            this.funcionarioRank3.Text = "label6";
+            // 
+            // funcionarioRank4
+            // 
+            this.funcionarioRank4.AutoSize = true;
+            this.funcionarioRank4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.funcionarioRank4.Location = new System.Drawing.Point(11, 171);
+            this.funcionarioRank4.Name = "funcionarioRank4";
+            this.funcionarioRank4.Size = new System.Drawing.Size(53, 20);
+            this.funcionarioRank4.TabIndex = 12;
+            this.funcionarioRank4.Text = "label5";
+            // 
+            // funcionarioRank2
+            // 
+            this.funcionarioRank2.AutoSize = true;
+            this.funcionarioRank2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.funcionarioRank2.Location = new System.Drawing.Point(11, 98);
+            this.funcionarioRank2.Name = "funcionarioRank2";
+            this.funcionarioRank2.Size = new System.Drawing.Size(53, 20);
+            this.funcionarioRank2.TabIndex = 11;
+            this.funcionarioRank2.Text = "label4";
+            // 
             // EstoqueProdutos
             // 
             this.EstoqueProdutos.BackColor = System.Drawing.Color.WhiteSmoke;
             this.EstoqueProdutos.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalRight;
-            chartArea6.Name = "ChartArea1";
-            this.EstoqueProdutos.ChartAreas.Add(chartArea6);
+            chartArea3.Name = "ChartArea1";
+            this.EstoqueProdutos.ChartAreas.Add(chartArea3);
             this.EstoqueProdutos.Cursor = System.Windows.Forms.Cursors.Default;
-            legend6.Name = "Legend1";
-            this.EstoqueProdutos.Legends.Add(legend6);
+            legend3.Name = "Legend1";
+            this.EstoqueProdutos.Legends.Add(legend3);
             this.EstoqueProdutos.Location = new System.Drawing.Point(793, 563);
             this.EstoqueProdutos.Name = "EstoqueProdutos";
             this.EstoqueProdutos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series6.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series6.Color = System.Drawing.Color.MediumAquamarine;
-            series6.Legend = "Legend1";
-            series6.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series6.Name = "Series1";
-            series6.YValuesPerPoint = 2;
-            this.EstoqueProdutos.Series.Add(series6);
+            series3.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series3.Color = System.Drawing.Color.MediumAquamarine;
+            series3.Legend = "Legend1";
+            series3.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series3.Name = "Series1";
+            series3.YValuesPerPoint = 2;
+            this.EstoqueProdutos.Series.Add(series3);
             this.EstoqueProdutos.Size = new System.Drawing.Size(429, 215);
             this.EstoqueProdutos.TabIndex = 11;
             this.EstoqueProdutos.Text = "Estoque de Produtos";
@@ -545,16 +549,16 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label funcionarioRank2;
+        public System.Windows.Forms.Label funcionarioRank1;
+        public System.Windows.Forms.Label funcionarioRank10;
+        public System.Windows.Forms.Label funcionarioRank9;
+        public System.Windows.Forms.Label funcionarioRank8;
+        public System.Windows.Forms.Label funcionarioRank7;
+        public System.Windows.Forms.Label funcionarioRank6;
+        public System.Windows.Forms.Label funcionarioRank5;
+        public System.Windows.Forms.Label funcionarioRank3;
+        public System.Windows.Forms.Label funcionarioRank4;
         private System.Windows.Forms.Label FuncionarioMes;
         private System.Windows.Forms.DataVisualization.Charting.Chart EstoqueProdutos;
         private System.Windows.Forms.Panel panel4;

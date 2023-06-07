@@ -15,7 +15,7 @@ namespace market
         [STAThread]
         static void Main()
         {
-            Inicializador.Iniciar();
+            Inicializador.VerificarPastaEArquivos();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
