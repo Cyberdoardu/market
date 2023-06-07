@@ -63,6 +63,26 @@ namespace market.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Carrinho_block {
+            get {
+                object obj = ResourceManager.GetObject("Carrinho_block", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cesta {
+            get {
+                object obj = ResourceManager.GetObject("cesta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fundo_Azul {
             get {
                 object obj = ResourceManager.GetObject("Fundo_Azul", resourceCulture);
