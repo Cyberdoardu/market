@@ -18,7 +18,6 @@ namespace market
         public Form1()
         {
             InitializeComponent();
-            Funcionalidades = new funcionalidades(this);
             funcionalidades.Inicializador inicializador = new funcionalidades.Inicializador(this);
             inicializador.LerArquivo();
         }

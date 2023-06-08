@@ -560,7 +560,6 @@ namespace market
         public System.Windows.Forms.Label funcionarioRank3;
         public System.Windows.Forms.Label funcionarioRank4;
         private System.Windows.Forms.Label FuncionarioMes;
-        private System.Windows.Forms.DataVisualization.Charting.Chart EstoqueProdutos;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel5;
@@ -568,6 +567,7 @@ namespace market
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        public System.Windows.Forms.DataVisualization.Charting.Chart EstoqueProdutos;
     }
 }
 
