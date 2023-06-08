@@ -72,8 +72,17 @@
     <Compile Include="funcionalidades.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="produtos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="produtos.Designer.cs">
+      <DependentUpon>produtos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="produtos.resx">
+      <DependentUpon>produtos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -104,6 +113,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Imagem_Verde.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Carrinho_block.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cesta.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
