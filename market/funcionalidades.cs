@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using market;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace market
 {
@@ -135,18 +136,51 @@ namespace market
                                 if (indexes.Contains(i))
                                 {
                                     labels[i].Text = (i + 1) + "° - Erro com os valores";
-                                } else
-                                {
-                                    labels[i].Text = (i + 1) + "° - " + list[i].Key;
                                 }
-                                
+                                else
+                                {
+                                    int index = list.FindIndex(pair => pair.Key == funcionariosCells[i].Text);
+                                    if (index != -1)
+                                    {
+                                        labels[i].Text = (i + 1) + "° - " + list[index].Key;
+                                    }
+                                }
                             }
+
                         }
 
                         // Adicionar os dados ao gráfico
                         // Certifique-se de que a série de dados no gráfico está vazia antes de adicionar novos pontos de dados
-                        mainForm.EstoqueProdutos.Series[0].Points.Clear();
-                        mainForm.EstoqueProdutos.Series[0].Points.DataBindXY(funcionarios, vendas);
+                        var chartArea = mainForm.EstoqueProdutos.ChartAreas[0];
+
+                        // Forçar a exibição de todas as labels no eixo X
+                        chartArea.AxisX.LabelStyle.Angle = -90;
+                        chartArea.AxisX.Interval = 1;
+
+                        var series = mainForm.EstoqueProdutos.Series[0];
+                        series.Points.Clear();
+                        series.Points.DataBindXY(funcionarios, vendas);
+
+
+
+                        // Define a distância entre as marcas de escala e garante que um rótulo seja exibido para cada ponto de dados
+                        mainForm.EstoqueProdutos.ChartAreas[0].AxisY.IntervalAutoMode = IntervalAutoMode.FixedCount;
+                        mainForm.EstoqueProdutos.ChartAreas[0].AxisY.Interval = 1;
+
+
+
+                        // Deitar labels das barras
+                        mainForm.EstoqueProdutos.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
+
+
+
+                        // definir o número de pontos de dados a serem exibidos de uma vez
+                        int viewSize = 10;
+                        mainForm.EstoqueProdutos.ChartAreas[0].AxisX.ScaleView.Size = viewSize;
+
+                        // definir o tamanho mínimo da exibição para evitar o zoom
+                        mainForm.EstoqueProdutos.ChartAreas[0].AxisX.ScaleView.MinSize = viewSize;
+
                     }
                 } finally
                 {

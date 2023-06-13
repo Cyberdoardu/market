@@ -38,9 +38,6 @@ namespace market
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.Cadastro = new System.Windows.Forms.Button();
@@ -49,7 +46,6 @@ namespace market
             this.Estoque = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -75,7 +71,6 @@ namespace market
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.panel3.SuspendLayout();
@@ -193,32 +188,13 @@ namespace market
             this.dateTimePicker1.Size = new System.Drawing.Size(298, 22);
             this.dateTimePicker1.TabIndex = 2;
             // 
-            // chart1
-            // 
-            this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(306, 84);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(455, 193);
-            this.chart1.TabIndex = 5;
-            this.chart1.Text = "chart1";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(793, 84);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(429, 193);
+            this.panel2.Size = new System.Drawing.Size(429, 204);
             this.panel2.TabIndex = 6;
             // 
             // label2
@@ -246,21 +222,21 @@ namespace market
             // chart2
             // 
             this.chart2.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
             this.chart2.Cursor = System.Windows.Forms.Cursors.Cross;
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(793, 328);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
+            this.chart2.Location = new System.Drawing.Point(306, 84);
             this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.LegendText = "Vendas";
-            series2.MarkerBorderColor = System.Drawing.Color.White;
-            series2.Name = "Series1";
-            this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(429, 204);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Legend = "Legend1";
+            series1.LegendText = "Vendas";
+            series1.MarkerBorderColor = System.Drawing.Color.White;
+            series1.Name = "Series1";
+            this.chart2.Series.Add(series1);
+            this.chart2.Size = new System.Drawing.Size(455, 204);
             this.chart2.TabIndex = 9;
             this.chart2.Text = "chart2";
             this.chart2.Click += new System.EventHandler(this.chart2_Click);
@@ -400,25 +376,25 @@ namespace market
             // 
             this.EstoqueProdutos.BackColor = System.Drawing.Color.WhiteSmoke;
             this.EstoqueProdutos.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalRight;
-            chartArea3.Name = "ChartArea1";
-            this.EstoqueProdutos.ChartAreas.Add(chartArea3);
+            chartArea2.Name = "ChartArea1";
+            this.EstoqueProdutos.ChartAreas.Add(chartArea2);
             this.EstoqueProdutos.Cursor = System.Windows.Forms.Cursors.Default;
-            legend3.Name = "Legend1";
-            this.EstoqueProdutos.Legends.Add(legend3);
-            this.EstoqueProdutos.Location = new System.Drawing.Point(793, 563);
+            legend2.Name = "Legend1";
+            this.EstoqueProdutos.Legends.Add(legend2);
+            this.EstoqueProdutos.Location = new System.Drawing.Point(793, 328);
             this.EstoqueProdutos.Name = "EstoqueProdutos";
             this.EstoqueProdutos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series3.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series3.Color = System.Drawing.Color.MediumAquamarine;
-            series3.Legend = "Legend1";
-            series3.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series3.Name = "Series1";
-            series3.YValuesPerPoint = 2;
-            this.EstoqueProdutos.Series.Add(series3);
-            this.EstoqueProdutos.Size = new System.Drawing.Size(429, 215);
+            series2.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series2.Color = System.Drawing.Color.MediumAquamarine;
+            series2.Legend = "Legend1";
+            series2.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series2.Name = "Series1";
+            series2.YValuesPerPoint = 2;
+            this.EstoqueProdutos.Series.Add(series2);
+            this.EstoqueProdutos.Size = new System.Drawing.Size(429, 450);
             this.EstoqueProdutos.TabIndex = 11;
             this.EstoqueProdutos.Text = "Estoque de Produtos";
             // 
@@ -507,7 +483,6 @@ namespace market
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.chart1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -515,7 +490,6 @@ namespace market
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
@@ -538,7 +512,6 @@ namespace market
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Estoque;
