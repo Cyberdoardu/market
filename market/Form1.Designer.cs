@@ -70,6 +70,7 @@ namespace market
             this.panel6 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.produtos1 = new market.Produtos();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
@@ -466,6 +467,13 @@ namespace market
             this.label17.TabIndex = 12;
             this.label17.Text = "Home";
             // 
+            // produtos1
+            // 
+            this.produtos1.Location = new System.Drawing.Point(306, 51);
+            this.produtos1.Name = "produtos1";
+            this.produtos1.Size = new System.Drawing.Size(916, 727);
+            this.produtos1.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -474,6 +482,7 @@ namespace market
             this.BackgroundImage = global::market.Properties.Resources.Imagem_Verde;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1339, 794);
+            this.Controls.Add(this.produtos1);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -541,6 +550,7 @@ namespace market
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         public System.Windows.Forms.DataVisualization.Charting.Chart EstoqueProdutos;
+        public Produtos produtos1;
     }
 }
 

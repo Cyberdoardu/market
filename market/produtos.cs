@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace market
 {
-    public partial class produtos : UserControl
+    public partial class Produtos : UserControl
     {
-        public produtos()
+        public Produtos()
         {
             InitializeComponent();
         }
