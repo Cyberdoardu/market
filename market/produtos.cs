@@ -15,6 +15,7 @@ namespace market
         public Produtos()
         {
             InitializeComponent();
+            MarketForm.InicializarComponentes();
         }
     }
 }

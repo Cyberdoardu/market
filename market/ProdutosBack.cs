@@ -19,7 +19,7 @@ namespace market
 
         public MarketForm()
         {
-            InitializeComponent();
+           
             InicializarComponentes();
             AtualizarDataGridView();
         }
