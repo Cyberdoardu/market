@@ -44,6 +44,10 @@ namespace market
 
 
 
+            private List<Produto> produtos;
+
+            
+
 
             public void LerArquivo()
             {
@@ -404,3 +408,4 @@ namespace market
 
     }
 }
+

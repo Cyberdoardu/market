@@ -76,6 +76,7 @@
     <Compile Include="Produtos.Designer.cs">
       <DependentUpon>Produtos.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProdutosBack.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
