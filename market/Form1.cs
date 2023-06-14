@@ -44,7 +44,10 @@ namespace market
 
         private void Cadastro_Click(object sender, EventArgs e)
         {
-
+            this.produtos1.SendToBack();
+            this.vendas1.SendToBack();
+            this.cadastro1.BringToFront();
+            this.estoque1.SendToBack();
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -100,6 +103,43 @@ namespace market
         private void label17_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label17_Click_1(object sender, EventArgs e)
+        {
+            this.produtos1.SendToBack();
+            this.vendas1.SendToBack();
+            this.cadastro1.SendToBack();
+            this.estoque1.SendToBack();
+        }
+
+        private void Produtos_Click(object sender, EventArgs e)
+        {
+            this.produtos1.BringToFront();
+            this.vendas1.SendToBack();
+            this.cadastro1.SendToBack();
+            this.estoque1.SendToBack();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.produtos1.SendToBack();
+        }
+
+        private void Vendas_Click_1(object sender, EventArgs e)
+        {
+            this.produtos1.SendToBack();
+            this.vendas1.BringToFront();
+            this.cadastro1.SendToBack();
+            this.estoque1.SendToBack();
+        }
+
+        private void Estoque_Click(object sender, EventArgs e)
+        {
+            this.produtos1.SendToBack();
+            this.vendas1.SendToBack();
+            this.cadastro1.SendToBack();
+            this.estoque1.BringToFront();
         }
     }
 }
