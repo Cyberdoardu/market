@@ -199,9 +199,6 @@ namespace market
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel2.Controls.Add(this.estoque1);
-            this.panel2.Controls.Add(this.cadastro1);
-            this.panel2.Controls.Add(this.vendas1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(793, 84);
             this.panel2.Name = "panel2";
@@ -478,33 +475,30 @@ namespace market
             this.label17.Text = "Home";
             this.label17.Click += new System.EventHandler(this.label17_Click_1);
             // 
-            // produtos1
-            // 
+            // // Produtos
             this.produtos1.Location = new System.Drawing.Point(306, 51);
             this.produtos1.Name = "produtos1";
             this.produtos1.Size = new System.Drawing.Size(916, 727);
             this.produtos1.TabIndex = 13;
-            // 
-            // vendas1
-            // 
-            this.vendas1.Location = new System.Drawing.Point(-382, 97);
+
+            // Vendas
+            this.vendas1.Location = new System.Drawing.Point(306, 51);
             this.vendas1.Name = "vendas1";
             this.vendas1.Size = new System.Drawing.Size(916, 727);
             this.vendas1.TabIndex = 14;
-            // 
-            // estoque1
-            // 
-            this.estoque1.Location = new System.Drawing.Point(-490, -33);
+
+            // Estoque
+            this.estoque1.Location = new System.Drawing.Point(306, 51);
             this.estoque1.Name = "estoque1";
             this.estoque1.Size = new System.Drawing.Size(916, 727);
             this.estoque1.TabIndex = 15;
-            // 
-            // cadastro1
-            // 
-            this.cadastro1.Location = new System.Drawing.Point(-332, 97);
+
+            // Cadastro
+            this.cadastro1.Location = new System.Drawing.Point(306, 51);
             this.cadastro1.Name = "cadastro1";
             this.cadastro1.Size = new System.Drawing.Size(916, 727);
             this.cadastro1.TabIndex = 16;
+
             // 
             // Form1
             // 
@@ -515,6 +509,9 @@ namespace market
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1339, 794);
             this.Controls.Add(this.produtos1);
+            this.Controls.Add(this.estoque1);
+            this.Controls.Add(this.cadastro1);
+            this.Controls.Add(this.vendas1);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
