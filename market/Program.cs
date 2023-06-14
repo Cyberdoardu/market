@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static market.funcionalidades;
-using static market.ProdutosBack;
 
 namespace market
 {
@@ -17,7 +16,6 @@ namespace market
         static void Main()
         {
             Inicializador.VerificarPastaEArquivos();
-            InicializadorProdutos.start();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
