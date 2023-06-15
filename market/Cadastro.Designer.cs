@@ -177,10 +177,10 @@
         private System.Windows.Forms.RadioButton rdbCliente;
         private System.Windows.Forms.RadioButton rdbFuncionario;
         private System.Windows.Forms.DataGridView dgvFuncionarios;
-        private System.Windows.Forms.DataGridView dgvClientes;
-        private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnDescartar;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btnCadastrar;
+        public System.Windows.Forms.DataGridView dgvClientes;
     }
 }

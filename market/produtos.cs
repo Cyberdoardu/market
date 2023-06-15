@@ -1,8 +1,10 @@
-﻿using System;
+﻿using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +22,31 @@ namespace market
             // Associar o evento de clicar, do botão Cadastrar ao método btnCadastrar_Click
             btnCadastrar.Click += btnCadastrar_Click;
         }
+
+        private void SalvarProduto(Produto produto)
+        {
+            string pastaAppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string pastaMarket = Path.Combine(pastaAppData, "market");
+            string filePath = Path.Combine(pastaMarket, "dados.xlsx");
+
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+            using (var package = new ExcelPackage(new FileInfo(filePath)))
+            {
+                ExcelWorksheet planilha = package.Workbook.Worksheets["Produtos"];
+
+                // Determina a primeira linha vazia
+                int linha = planilha.Dimension?.Rows + 1 ?? 1;
+
+                // Adiciona os dados
+                planilha.Cells[linha, 1].Value = produto.Nome;
+                planilha.Cells[linha, 2].Value = produto.Preco;
+                planilha.Cells[linha, 3].Value = produto.Quantidade;
+
+                package.Save(); // Salva as alterações no arquivo
+            }
+        }
+
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
@@ -51,12 +78,16 @@ namespace market
             // Adiciona ele ao novo produto à lista
             produtos.Add(novoProduto);
 
+            // Salva o produto na planilha
+            SalvarProduto(novoProduto);
+
             // Atualiza o nosso DataGridView
             AtualizarDataGridView();
 
             // Por fim, ele limpa campos do formulário
             LimparCampos();
         }
+
 
         private void LimparCampos()
         {

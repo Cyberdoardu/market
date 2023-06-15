@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LicenseContext = OfficeOpenXml.LicenseContext;
 
 namespace market
 {
@@ -17,26 +18,22 @@ namespace market
     {
         private static Semaphore semaforo = new Semaphore(1, 1);
 
-        private DataTable dtClientes;
-        private DataTable dtFuncionarios;
-
         public Cadastro()
         {
             InitializeComponent();
 
-            dtClientes = new DataTable();
-            dtFuncionarios = new DataTable();
+           
 
             CarregarDados();
         }
 
         private void CarregarDados()
         {
-            dtClientes.Clear();
-            dtFuncionarios.Clear();
+            dgvClientes.DataSource = null;
+            dgvFuncionarios.DataSource = null;
 
-            Thread t1 = new Thread(() => CarregarPlanilha("Clientes", dtClientes));
-            Thread t2 = new Thread(() => CarregarPlanilha("Funcionarios", dtFuncionarios));
+            Thread t1 = new Thread(() => CarregarPlanilha("Clientes", dgvClientes));
+            Thread t2 = new Thread(() => CarregarPlanilha("Funcionarios", dgvFuncionarios));
 
             t1.Start();
             t2.Start();
@@ -44,17 +41,20 @@ namespace market
             t1.Join();
             t2.Join();
 
-            dgvClientes.DataSource = dtClientes;
-            dgvFuncionarios.DataSource = dtFuncionarios;
         }
 
-        private void CarregarPlanilha(string nomePlanilha, DataTable dt)
+        private void CarregarPlanilha(string nomePlanilha, DataGridView dt)
         {
+
+            /* Está com problema pq o DataGrid pode terminar a construção antes do resto da UI
+             * 
             semaforo.WaitOne();
 
             string pastaAppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string pastaMarket = Path.Combine(pastaAppData, "market");
             string filePath = Path.Combine(pastaMarket, "dados.xlsx");
+
+
 
             try
             {
@@ -63,55 +63,73 @@ namespace market
                     throw new Exception("O arquivo dados.xlsx não foi encontrado.");
                 }
 
-                ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+                List<string> columns = new List<string>();
+                List<List<object>> rows = new List<List<object>>();
 
                 using (var package = new ExcelPackage(new FileInfo(filePath)))
                 {
                     ExcelWorksheet planilha = package.Workbook.Worksheets[nomePlanilha];
 
-                    dt.Clear();
-                    dt.Columns.Clear();
-
-                    // Preencher o DataTable
-                    for (int i = planilha.Dimension.Start.Row; i <= planilha.Dimension.End.Row; i++)
+                    // Adiciona as colunas
+                    for (int i = planilha.Dimension.Start.Column; i <= planilha.Dimension.End.Column; i++)
                     {
-                        DataRow row = dt.NewRow();
+                        var cell = planilha.Cells[1, i];
+                        if (cell.Value != null)
+                        {
+                            columns.Add(cell.Value.ToString());
+                        }
+                    }
+
+                    // Adiciona as linhas
+                    for (int i = planilha.Dimension.Start.Row + 1; i <= planilha.Dimension.End.Row; i++)
+                    {
+                        List<object> row = new List<object>();
                         for (int j = planilha.Dimension.Start.Column; j <= planilha.Dimension.End.Column; j++)
                         {
                             var cell = planilha.Cells[i, j];
-
                             if (cell.Value != null)
                             {
-                                if (i == planilha.Dimension.Start.Row)
-                                {
-                                    dt.Columns.Add(cell.Value.ToString());
-                                }
-                                else if (j <= dt.Columns.Count) // Verificando se a coluna existe no DataRow
-                                {
-                                    row[j - 1] = cell.Value;
-                                }
+                                row.Add(cell.Value);
                             }
-
                         }
-
-                        if (i != planilha.Dimension.Start.Row)
-                        {
-                            dt.Rows.Add(row);
-                        }
+                        rows.Add(row);
                     }
                 }
+
+                // Invoke the operation in the UI thread
+                dt.Invoke((MethodInvoker)delegate {
+                    // Running on the UI thread
+                    dt.Columns.Clear();
+
+                    foreach (var column in columns)
+                    {
+                        dt.Columns.Add(column, column);
+                    }
+
+                    foreach (var row in rows)
+                    {
+                        dt.Rows.Add(row.ToArray());
+                    }
+                });
             }
             finally
             {
                 semaforo.Release();
             }
+
+            
+
+            */
         }
+
+
 
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Thread t1 = new Thread(() => SalvarPlanilha("Clientes", dtClientes));
-            Thread t2 = new Thread(() => SalvarPlanilha("Funcionarios", dtFuncionarios));
+            Thread t1 = new Thread(() => SalvarPlanilha("Clientes", dgvClientes));
+            Thread t2 = new Thread(() => SalvarPlanilha("Funcionarios", dgvFuncionarios));
 
             t1.Start();
             t2.Start();
@@ -122,7 +140,7 @@ namespace market
             MessageBox.Show("Dados salvos com sucesso!");
         }
 
-        private void SalvarPlanilha(string nomePlanilha, DataTable dt)
+        private void SalvarPlanilha(string nomePlanilha, DataGridView dt)
         {
             semaforo.WaitOne();
 
@@ -137,25 +155,24 @@ namespace market
                     throw new Exception("O arquivo dados.xlsx não foi encontrado.");
                 }
 
-                ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
                 using (var package = new ExcelPackage(new FileInfo(filePath)))
                 {
                     ExcelWorksheet planilha = package.Workbook.Worksheets[nomePlanilha];
 
-                    // Limpar a planilha
                     planilha.Cells.Clear();
 
-                    // Preencher a planilha com os dados do DataTable
+                    // Preencher a planilha
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         for (int j = 0; j < dt.Columns.Count; j++)
                         {
                             if (i == 0)
                             {
-                                planilha.Cells[i + 1, j + 1].Value = dt.Columns[j].ColumnName;
+                                planilha.Cells[1, j + 1].Value = dt.Columns[j].Name;
                             }
-                            planilha.Cells[i + 2, j + 1].Value = dt.Rows[i][j];
+                            planilha.Cells[i + 2, j + 1].Value = dt.Rows[i].Cells[j].Value;
                         }
                     }
 
@@ -168,10 +185,12 @@ namespace market
             }
         }
 
+
         private void btnDescartar_Click(object sender, EventArgs e)
         {
             CarregarDados();
         }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             string nome = txtNome.Text;
@@ -194,9 +213,9 @@ namespace market
 
             Thread t = new Thread(pessoa.Cadastrar);
             t.Start();
+            t.Join();
+            CarregarDados();
         }
-
-
 
         public abstract class Pessoa
         {
@@ -248,7 +267,6 @@ namespace market
             }
         }
 
-
         private void AdicionarNaPlanilha(string nomePlanilha, object[] dados)
         {
             string pastaAppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -265,7 +283,7 @@ namespace market
                     throw new Exception("O arquivo dados.xlsx não foi encontrado.");
                 }
 
-                ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
                 using (var package = new ExcelPackage(new FileInfo(filePath)))
                 {
@@ -295,3 +313,4 @@ namespace market
         }
     }
 }
+
